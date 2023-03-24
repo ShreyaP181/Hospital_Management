@@ -6,11 +6,12 @@ int IsAlpha(char str[])
 	int Len = strlen(str);
 	for(StrLen = 0;StrLen < Len ; StrLen++)
 	{
-		if(!IsAlpha(str[StrLen]))
+		if(!isalpha(str[StrLen]))
 		{
 			printf("WRONG INPUT");
-			return ERROR;
+			return 0;
 		}
 	}
-	return SUCCESSFULL;
+	return 1;
 }
+

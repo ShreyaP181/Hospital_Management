@@ -21,8 +21,7 @@ void DisplayPatientList()
 void DisplayDoctorList()
 {
 	Doctor *ListOfDoctor = malloc(sizeof(Doctor));
-	
-	ListOfDoctor = First;
+	ListOfDoctor = star;
         printf("Doctor Record\n");
  	while(ListOfDoctor != NULL)
 	{

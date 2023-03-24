@@ -35,5 +35,10 @@ Doctor *star;
 Doctor *tem;
 
 void DisplayPatientList();
-//void DisplayDoctorList();
+void DisplayDoctorList();
+int Input_Patient();
+int Input_Doctor();
+void input_at_first();
+void input_at_end();
+void input_at_location(int i);
 int IsAlpha(char str[]);
