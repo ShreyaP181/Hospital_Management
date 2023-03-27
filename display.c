@@ -5,13 +5,14 @@ void DisplayPatientList()
 	Patient *ListOfPatient = malloc(sizeof(Patient));
 	ListOfPatient = start;
 	printf("Patient Record\n");
+	printf("---------------------------------------------------------------\n");
 	while(ListOfPatient != NULL)
 	{
 		printf("Patient Name:%s\n",ListOfPatient->Name);
 		printf("Patient Dicease=%s\n",ListOfPatient->Disease);
 		printf("Ward Num= %d\n",ListOfPatient->Ward);
 		printf("Doctor Name=%s\n",ListOfPatient->D.DName);		
-		printf("Date of joining= %s-%s-%s\n",ListOfPatient->DOJ.Date,ListOfPatient->DOJ.Month,ListOfPatient->DOJ.year);	
+		printf("Date of joining= %s\n",ListOfPatient->DOJ);	
 		printf("---------------------------------------------\n");
 		ListOfPatient = ListOfPatient->next;
 	}
