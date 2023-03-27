@@ -1,6 +1,7 @@
 #include "file.h"
 
-int Input_Patient(){
+int Input_Patient()
+{
 	int choice,data;
 	char temp;
 	Patient *new = malloc(sizeof(Patient));
@@ -28,9 +29,10 @@ int Input_Patient(){
 	scanf("%c",&temp);
 	gets(new->D.DName);
 	printf("Enter Date of joining\n");
-	scanf("%s",new->DOJ.Date);
-	scanf("%s",new->DOJ.Month);
-	scanf("%s",new->DOJ.year);
+	scanf("%s",new->DOJ);
+	new->next= NULL;
+	start = new;
+	tep = new;
 	printf("enter data -1 if you want to exit");
 	scanf("%d",&data);
 	while(data !=-1)
@@ -49,8 +51,7 @@ int Input_Patient(){
 				return;
 			}
 		}
-		printf("Enter Disease: \n");							
-		scanf("%c",&temp);
+		printf("Enter Disease: \n");							scanf("%c",&temp);
 		gets(append->Disease);
 		printf("Enter Ward num: \n");
 		scanf("%d",&append->Ward);
@@ -58,12 +59,10 @@ int Input_Patient(){
 		scanf("%c",&temp);
 		gets(append->D.DName);
 		printf("Enter Date of joining\n");
-		scanf("%s",append->DOJ.Date);
-		scanf("%s",append->DOJ.Month);
-		scanf("%s",append->DOJ.year);
+		scanf("%s",append->DOJ);
 		append->next =NULL;
-		tep->next = new;
-		tep = new;
+		tep->next = append;
+		tep = append;
 		printf("Enter -1 to end");
 		scanf("%d",&data);
 	}
@@ -128,7 +127,7 @@ void main()
 	int choice;
 	while(1){
 		printf("enter menu option: \n");
-		printf("Enter 1 for Patient Entry\n2 for Doctor Entry\n3 for display patient entry\n4 for Display Doctor Entry\n5 for exit");
+		printf("Enter 1 for Patient Entry\n2 for Doctor Entry\n3 for display patient entry\n4 for Display Doctor Entry\n5 for exit\n6 for sorting");
 		scanf("%d",&choice);
 		switch(choice){
 			case 1:	
@@ -147,7 +146,8 @@ void main()
 				printf("exiting program\n");
 				exit(0);
 			case 6:
-
+				Sorting_Patient();
+				break;
 			default:
 				printf("Invalid choice\n");
 				break;		

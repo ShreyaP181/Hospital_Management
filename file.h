@@ -8,12 +8,6 @@
 #define SUCCESSFULL 1
 #define CONDITION 3
 
-typedef struct Date{
-	char Date[MAX_DATE];
-	char Month[MAX_DATE];
-	char year[MAX_DATE];
-}Date;
-
 typedef struct Doctor{
 	char DName[MAX];
 	char Spc[MAX];
@@ -25,7 +19,7 @@ typedef struct Patient{
 	char Disease[MAX];
 	int Ward;
 	Doctor D;
-	Date DOJ;
+	char DOJ[8];
 	struct Patient *next;
 }Patient;
 
@@ -41,4 +35,5 @@ int Input_Doctor();
 void input_at_first();
 void input_at_end();
 void input_at_location(int i);
+void Sorting_Patient();
 int IsAlpha(char str[]);
